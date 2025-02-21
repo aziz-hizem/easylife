@@ -35,14 +35,13 @@ const App = () => {
           <h1 className="text-xl md:text-2xl font-bold text-sky-900">Easy<span className="text-sky-400">Life</span></h1>
         </div>
         <nav className="hidden md:flex gap-4 lg:gap-6 text-gray-700 font-medium mx-auto">
-          {/*CHANGE IDS FOR BUTTONS !!!*/}
           <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
             Nettoyage Maison
           </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
+          <button onClick={() => document.getElementById("Prix_et_services").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
             Prix et Services
           </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
+          <button onClick={() => document.getElementById("FAQ").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
             FAQ
           </button>
         </nav>
@@ -60,10 +59,10 @@ const App = () => {
          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="py-4 px-4 hover:text-sky-400">
             Nettoyage Maison
           </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
+          <button onClick={() => document.getElementById("Prix_et_services").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
             Prix et Services
           </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
+          <button onClick={() => document.getElementById("FAQ").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
             FAQ
           </button>
       </motion.div>
@@ -107,6 +106,17 @@ const App = () => {
           ))}
         </div>
       </section>
+
+      {/*Prix et Services Section */}
+      <section id="Prix_et_services" className="py-12 px-4 md:px-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-900 mb-6">Prix et Services</h2>
+      </section>
+
+      {/*FAQ Section*/}
+      <section id="FAQ" className="py-12 px-4 md:px-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-900 mb-6">FAQ</h2>
+      </section>
+
     </div>
   );
 };
