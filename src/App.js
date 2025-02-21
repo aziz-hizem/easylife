@@ -1,11 +1,13 @@
 import React from "react";
 import { FaCheck, FaPhone } from "react-icons/fa";
 import "./index.css"; // Keep this for any custom styles if needed
+import "./fonts.css";
 
 // Images
 import maidImage from "./assets/maid.png";
 import mainImage from "./assets/main.png";
-import numberOneImage from "./assets/one.png"; // Import the new image
+import numberOneImage from "./assets/one.png";
+import todayIcon from "./assets/today.png";
 
 const App = () => {
   // Define the phone number
@@ -33,18 +35,19 @@ const App = () => {
 
         {/* Reservation Button */}
         <a
-          href={`tel:${phoneNumber}`} // Use the tel: protocol
-          className="bg-sky-400 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-sm md:text-base font-semibold hover:bg-sky-600"
+          href={`tel:${phoneNumber}`}
+          className="bg-sky-400 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-sm md:text-base font-sofia font-italic hover:bg-sky-600 flex items-center gap-2"
         >
+          <img src={todayIcon} alt="Checklist Icon" className="h-4 md:h-5" />
           Réservez un nettoyage !
         </a>
       </header>
-
       {/* Main Content */}
       <main className="pt-20 md:pt-24 px-4 md:px-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
         {/* Left Side Content */}
-        <div className="max-w-md md:max-w-lg text-center md:text-left">
-          <h2 className="text-2xl md:text-4xl font-bold text-sky-900 font-sofia">
+        {/*<div className="max-w-md md:max-w-lg text-center md:text-left">*/}
+        <div className="w-full md:w-1/2 lg:w-2/5 text-center md:text-left">
+          <h2 className="text-2xl md:text-4xl font-bold text-sky-900 font-sofia font-bold">
             <div className="flex items-center">
               Votre service de ménage n°
               <img
