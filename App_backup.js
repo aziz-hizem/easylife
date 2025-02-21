@@ -35,38 +35,22 @@ const App = () => {
           <h1 className="text-xl md:text-2xl font-bold text-sky-900">Easy<span className="text-sky-400">Life</span></h1>
         </div>
         <nav className="hidden md:flex gap-4 lg:gap-6 text-gray-700 font-medium mx-auto">
-          {/*CHANGE IDS FOR BUTTONS !!!*/}
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
-            Nettoyage Maison
-          </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
-            Prix et Services
-          </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="hover:text-sky-400">
-            FAQ
-          </button>
+          <button className="hover:text-sky-400">Nettoyage de Maison</button>
+          <button className="hover:text-sky-400">Prix et Services</button>
+          <button className="hover:text-sky-400">FAQ</button>
         </nav>
         <a href={`tel:${phoneNumber}`} className="bg-sky-400 text-white text-xs md:text-lg px-2 md:px-5 py-2 rounded-lg hover:bg-sky-600 flex items-center gap-2">
-          <img src={todayIcon} alt="Checklist Icon" className="h-4 md:h-5" />Réservez un Nettoyage !
+          <img src={todayIcon} alt="Checklist Icon" className="h-4 md:h-5" />Réservez un nettoyage !
         </a>
       </header>
       {/* Mobile Menu */}
-      <motion.div
-        className="fixed top-14 left-0 w-full bg-white shadow-md flex flex-col z-40 overflow-hidden"
-        initial={{ maxHeight: 0 }} // Start with maxHeight: 0 (collapsed)
-        animate={{ maxHeight: isMenuOpen ? "160px" : 0 }} // Expand to maxHeight: 200px when open, collapse to 0 when closed
-        transition={{ duration: 0.3 }} // Smooth transition
-      >
-         <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className="py-4 px-4 hover:text-sky-400">
-            Nettoyage Maison
-          </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
-            Prix et Services
-          </button>
-          <button onClick={() => document.getElementById("maids").scrollIntoView({ behavior: "smooth" })} className=" py-2 px-4 hover:text-sky-400">
-            FAQ
-          </button>
-      </motion.div>
+      {isMenuOpen && (
+        <div className="fixed top-16 left-0 w-full bg-white shadow-md flex flex-col py-4 z-40">
+          <button className="py-2 px-4 hover:bg-gray-100">Nettoyage de Maison</button>
+          <button className="py-2 px-4 hover:bg-gray-100">Prix et Services</button>
+          <button className="py-2 px-4 hover:bg-gray-100">FAQ</button>
+        </div>
+      )}
       {/* Hero Section */}
       <main className="pt-20 md:pt-24 px-4 md:px-12 flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-8 md:gap-12 max-w-screen-lg mx-auto">
         <div className="max-w-md md:max-w-lg">
@@ -92,7 +76,7 @@ const App = () => {
         </div>
       </main>
       {/* Maid Section */}
-      <section id="maids" className="py-12 px-4 md:px-12">
+      <section className="py-12 px-4 md:px-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-900 mb-6">Rencontrez Nos Employées</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {maids.map((maid, index) => (
