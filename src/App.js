@@ -10,7 +10,7 @@ import numberOneImage from "./assets/one.png";
 import todayIcon from "./assets/today.png";
 
 const App = () => {
-  const phoneNumber = "+216 52 631 119";
+  const phoneNumber = "+216 00 00 00";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const maids = [
