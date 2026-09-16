@@ -1,58 +1,72 @@
-# EasyLife Maid Cleaning Service
+# EasyLife — Cleaning Service Landing Page
 
-EasyLife is a modern maid cleaning service website built with React and styled using Tailwind CSS for maximum adaptability across all devices and screens. The platform provides a seamless experience for users to learn about our services, request quotes, and book cleaning appointments online.
+A responsive landing page prototype for **EasyLife**, a home cleaning service in Tunis, built with **React**, **Tailwind CSS** and **Framer Motion**. The site content is in French, for its local audience.
 
-## Features
+**Live demo:** https://easylife-ten.vercel.app
 
-- Responsive design powered by Tailwind CSS for optimal viewing on any device
-- Clean and intuitive user interface built with React
-- Service listings, meet employees section, and contact options
-- Fast performance and easy customization
+> **Status: work in progress (discontinued).** This was a prototype built for a client. Development stopped after the first sections because the client had not settled on the rest of the content, and the project was then cancelled. The *Prix et Services* and *FAQ* sections are placeholders, the review buttons are not wired up, and the phone number is a dummy.
 
-### Prerequisites
+<p align="center">
+  <img src="docs/desktop.png" alt="EasyLife landing page on desktop" width="68%" />
+  &nbsp;
+  <img src="docs/mobile.png" alt="EasyLife landing page on mobile" width="22%" />
+</p>
 
-- Node.js and npm installed on your machine
+## What is built
 
-### Installation
+- **Responsive layout**: desktop navigation bar, collapsible animated menu on mobile
+- **Hero section** with the service's selling points and click-to-call booking buttons (`tel:` links)
+- **"Meet our team" cards** that animate into view as you scroll (Framer Motion `whileInView`)
+- **Smooth scrolling** navigation between sections
+- Deployed on **Vercel**
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/aziz-hizem/easylife.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd easylife
-    ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
+## Planned but not built
 
-### Available Scripts
+- Pricing and services section
+- FAQ
+- Customer reviews for each team member
+- Real booking flow and contact details
 
-In the project directory, you can run:
+## Tech stack
 
-#### `npm start`
+| | |
+|---|---|
+| UI | React 19 (Create React App) |
+| Styling | Tailwind CSS 3 |
+| Animation | Framer Motion |
+| Icons | react-icons (Font Awesome) |
+| Tests | Jest + React Testing Library |
+| Hosting | Vercel |
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting started
 
-#### `npm test`
+Requires **Node.js 18+**.
 
-Launches the test runner in the interactive watch mode.
+```bash
+git clone https://github.com/aziz-hizem/easylife.git
+cd easylife
+npm install
+npm start
+```
 
-#### `npm run build`
+The app runs at http://localhost:3000.
 
-Builds the app for production to the `build` folder.
+| Command | Description |
+|---|---|
+| `npm start` | Development server with hot reload |
+| `npm test` | Run the tests in watch mode |
+| `npm run build` | Production build in `build/` |
 
-#### `npm run eject`
+## Project structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-## Learn More
-
-- [React documentation](https://reactjs.org/)
-- [Tailwind CSS documentation](https://tailwindcss.com/)
-- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
-
----
+```
+easylife/
+├── public/          # HTML template, favicon, web manifest
+├── src/
+│   ├── App.js       # The whole landing page
+│   ├── App.test.js  # Rendering tests
+│   ├── assets/      # Illustrations and icons
+│   └── index.js     # Entry point
+├── docs/            # README screenshots
+└── tailwind.config.js
+```
